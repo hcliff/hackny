@@ -1,0 +1,534 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 941064 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:317), pid=12543, tid=2012404544
+#
+# JRE version: 6.0_24-b24
+# Java VM: OpenJDK Server VM (20.0-b12 mixed mode linux-x86 )
+# Derivative: IcedTea6 1.11.1
+# Distribution: Ubuntu precise (development branch), package 6b24-1.11.1-4ubuntu2
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xb66b6c00):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=12555, stack(0x77ead000,0x77f2e000)]
+
+Stack: [0x77ead000,0x77f2e000]
+
+Current CompileTask:
+C2:   7686 1869  !   4 java.net.URLClassLoader$1.run()Ljava/lang/Object; (73 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x778e6000 JavaThread "nREPL-worker-0" daemon [_thread_in_Java, id=12578, stack(0x7670d000,0x7675e000)]
+  0x73ec4000 JavaThread "clojure-agent-send-off-pool-5" [_thread_in_native, id=12576, stack(0x7675e000,0x767af000)]
+  0x789f6800 JavaThread "clojure-agent-send-off-pool-4" [_thread_in_native, id=12575, stack(0x767af000,0x76800000)]
+  0x73ebf000 JavaThread "clojure-agent-send-off-pool-3" [_thread_blocked, id=12562, stack(0x76d0d000,0x76d5e000)]
+  0x73eb9800 JavaThread "clojure-agent-send-off-pool-2" [_thread_blocked, id=12561, stack(0x76d5e000,0x76daf000)]
+  0x73eb2000 JavaThread "clojure-agent-send-off-pool-1" [_thread_in_Java, id=12560, stack(0x76daf000,0x76e00000)]
+  0x73e90000 JavaThread "clojure-agent-send-off-pool-0" [_thread_blocked, id=12559, stack(0x77506000,0x77557000)]
+  0xb66ba000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=12557, stack(0x77ddb000,0x77e2c000)]
+  0xb66b8400 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=12556, stack(0x77e2c000,0x77ead000)]
+=>0xb66b6c00 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=12555, stack(0x77ead000,0x77f2e000)]
+  0xb66b4c00 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=12554, stack(0x77f2e000,0x77faf000)]
+  0xb66b3400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=12553, stack(0x77faf000,0x78000000)]
+  0xb66a3c00 JavaThread "Finalizer" daemon [_thread_blocked, id=12552, stack(0x7834d000,0x7839e000)]
+  0xb66a2400 JavaThread "Reference Handler" daemon [_thread_blocked, id=12551, stack(0x7839e000,0x783ef000)]
+  0xb6608400 JavaThread "main" [_thread_blocked, id=12546, stack(0xb6728000,0xb6779000)]
+
+Other Threads:
+  0xb669e400 VMThread [stack: 0x783ef000,0x78470000] [id=12550]
+  0xb66bc000 WatcherThread [stack: 0x77d5a000,0x77ddb000] [id=12558]
+
+VM state:synchronizing (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0xb6605d38] Safepoint_lock - owner thread: 0xb669e400
+[0xb6605da0] Threads_lock - owner thread: 0xb669e400
+
+Heap
+ PSYoungGen      total 197952K, used 155262K [0xa0780000, 0xacd60000, 0xb0420000)
+  eden space 193728K, 77% used [0xa0780000,0xa9b01ae0,0xac4b0000)
+  from space 4224K, 99% used [0xac4b0000,0xac8ce090,0xac8d0000)
+  to   space 3776K, 0% used [0xac8d0000,0xac8d0000,0xacc80000)
+ PSOldGen        total 32320K, used 4026K [0x80e20000, 0x82db0000, 0xa0780000)
+  object space 32320K, 12% used [0x80e20000,0x8120e9c0,0x82db0000)
+ PSPermGen       total 16384K, used 12255K [0x78e20000, 0x79e20000, 0x80e20000)
+  object space 16384K, 74% used [0x78e20000,0x79a17dd8,0x79e20000)
+
+Code Cache  [0xb05a4000, 0xb0adc000, 0xb65a4000)
+ total_blobs=1646 nmethods=1482 adapters=85 free_code_cache=95643712 largest_free_block=38848
+
+Dynamic libraries:
+08048000-08051000 r-xp 00000000 08:01 315089     /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java
+08051000-08052000 r--p 00008000 08:01 315089     /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java
+08052000-08053000 rw-p 00009000 08:01 315089     /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java
+08afa000-08b75000 rw-p 00000000 00:00 0          [heap]
+72e00000-72ef3000 rw-p 00000000 00:00 0 
+72ef3000-72f00000 ---p 00000000 00:00 0 
+72f00000-72ff6000 rw-p 00000000 00:00 0 
+72ff6000-73000000 ---p 00000000 00:00 0 
+73000000-730ff000 rw-p 00000000 00:00 0 
+730ff000-73100000 ---p 00000000 00:00 0 
+73100000-731fe000 rw-p 00000000 00:00 0 
+731fe000-73200000 ---p 00000000 00:00 0 
+73200000-73300000 rw-p 00000000 00:00 0 
+73300000-733fc000 rw-p 00000000 00:00 0 
+733fc000-73400000 ---p 00000000 00:00 0 
+73400000-734f7000 rw-p 00000000 00:00 0 
+734f7000-73500000 ---p 00000000 00:00 0 
+73500000-735f9000 rw-p 00000000 00:00 0 
+735f9000-73600000 ---p 00000000 00:00 0 
+73600000-736f3000 rw-p 00000000 00:00 0 
+736f3000-73700000 ---p 00000000 00:00 0 
+73700000-737ff000 rw-p 00000000 00:00 0 
+737ff000-73800000 ---p 00000000 00:00 0 
+73800000-738f4000 rw-p 00000000 00:00 0 
+738f4000-73900000 ---p 00000000 00:00 0 
+73900000-739fa000 rw-p 00000000 00:00 0 
+739fa000-73a00000 ---p 00000000 00:00 0 
+73a00000-73ae1000 rw-p 00000000 00:00 0 
+73ae1000-73b00000 ---p 00000000 00:00 0 
+73b00000-73bf2000 rw-p 00000000 00:00 0 
+73bf2000-73c00000 ---p 00000000 00:00 0 
+73c00000-73cfe000 rw-p 00000000 00:00 0 
+73cfe000-73d00000 ---p 00000000 00:00 0 
+73d00000-73e00000 rw-p 00000000 00:00 0 
+73e00000-73ef2000 rw-p 00000000 00:00 0 
+73ef2000-73f00000 ---p 00000000 00:00 0 
+73f00000-740fa000 rw-p 00000000 00:00 0 
+740fa000-74100000 ---p 00000000 00:00 0 
+74100000-74200000 rw-p 00000000 00:00 0 
+74200000-74300000 rw-p 00000000 00:00 0 
+74300000-74400000 rw-p 00000000 00:00 0 
+74500000-745fb000 rw-p 00000000 00:00 0 
+745fb000-74600000 ---p 00000000 00:00 0 
+74600000-746fe000 rw-p 00000000 00:00 0 
+746fe000-74700000 ---p 00000000 00:00 0 
+74700000-74800000 rw-p 00000000 00:00 0 
+74800000-74900000 rw-p 00000000 00:00 0 
+74900000-74a00000 rw-p 00000000 00:00 0 
+74a00000-74af1000 rw-p 00000000 00:00 0 
+74af1000-74b00000 ---p 00000000 00:00 0 
+74b00000-74c00000 rw-p 00000000 00:00 0 
+74c00000-74cfa000 rw-p 00000000 00:00 0 
+74cfa000-74d00000 ---p 00000000 00:00 0 
+74d00000-74dfc000 rw-p 00000000 00:00 0 
+74dfc000-74e00000 ---p 00000000 00:00 0 
+74e00000-74f00000 rw-p 00000000 00:00 0 
+74f00000-74fea000 rw-p 00000000 00:00 0 
+74fea000-75000000 ---p 00000000 00:00 0 
+75000000-750f8000 rw-p 00000000 00:00 0 
+750f8000-75100000 ---p 00000000 00:00 0 
+75100000-751f9000 rw-p 00000000 00:00 0 
+751f9000-75200000 ---p 00000000 00:00 0 
+75200000-752ff000 rw-p 00000000 00:00 0 
+752ff000-75300000 ---p 00000000 00:00 0 
+75300000-75400000 rw-p 00000000 00:00 0 
+75400000-75500000 rw-p 00000000 00:00 0 
+75500000-75600000 rw-p 00000000 00:00 0 
+75600000-75700000 rw-p 00000000 00:00 0 
+75700000-75800000 rw-p 00000000 00:00 0 
+75800000-75900000 rw-p 00000000 00:00 0 
+75900000-75a00000 rw-p 00000000 00:00 0 
+75a00000-75b00000 rw-p 00000000 00:00 0 
+75b00000-75c00000 rw-p 00000000 00:00 0 
+75c00000-75e00000 rw-p 00000000 00:00 0 
+75e00000-75f00000 rw-p 00000000 00:00 0 
+75f00000-76000000 rw-p 00000000 00:00 0 
+76000000-76200000 rw-p 00000000 00:00 0 
+76200000-762fc000 rw-p 00000000 00:00 0 
+762fc000-76300000 ---p 00000000 00:00 0 
+76400000-764ee000 rw-p 00000000 00:00 0 
+764ee000-76500000 ---p 00000000 00:00 0 
+76500000-765ff000 rw-p 00000000 00:00 0 
+765ff000-76600000 ---p 00000000 00:00 0 
+76600000-766ff000 rw-p 00000000 00:00 0 
+766ff000-76700000 ---p 00000000 00:00 0 
+7670d000-76710000 ---p 00000000 00:00 0 
+76710000-7675e000 rw-p 00000000 00:00 0 
+7675e000-76761000 ---p 00000000 00:00 0 
+76761000-767af000 rw-p 00000000 00:00 0 
+767af000-767b2000 ---p 00000000 00:00 0 
+767b2000-76800000 rw-p 00000000 00:00 0 
+76800000-768fd000 rw-p 00000000 00:00 0 
+768fd000-76900000 ---p 00000000 00:00 0 
+76900000-769fc000 rw-p 00000000 00:00 0 
+769fc000-76a00000 ---p 00000000 00:00 0 
+76a00000-76ae2000 rw-p 00000000 00:00 0 
+76ae2000-76b00000 ---p 00000000 00:00 0 
+76b00000-76bf3000 rw-p 00000000 00:00 0 
+76bf3000-76c00000 ---p 00000000 00:00 0 
+76c00000-76cf7000 rw-p 00000000 00:00 0 
+76cf7000-76d00000 ---p 00000000 00:00 0 
+76d0d000-76d10000 ---p 00000000 00:00 0 
+76d10000-76d5e000 rw-p 00000000 00:00 0 
+76d5e000-76d61000 ---p 00000000 00:00 0 
+76d61000-76daf000 rw-p 00000000 00:00 0 
+76daf000-76db2000 ---p 00000000 00:00 0 
+76db2000-76e00000 rw-p 00000000 00:00 0 
+76e00000-76ee3000 rw-p 00000000 00:00 0 
+76ee3000-76f00000 ---p 00000000 00:00 0 
+76f00000-76ff8000 rw-p 00000000 00:00 0 
+76ff8000-77000000 ---p 00000000 00:00 0 
+77000000-770ff000 rw-p 00000000 00:00 0 
+770ff000-77100000 ---p 00000000 00:00 0 
+77100000-77200000 rw-p 00000000 00:00 0 
+77200000-772fc000 rw-p 00000000 00:00 0 
+772fc000-77300000 ---p 00000000 00:00 0 
+77300000-773ff000 rw-p 00000000 00:00 0 
+773ff000-77400000 ---p 00000000 00:00 0 
+77400000-774f9000 rw-p 00000000 00:00 0 
+774f9000-77500000 ---p 00000000 00:00 0 
+77506000-77509000 ---p 00000000 00:00 0 
+77509000-77557000 rw-p 00000000 00:00 0 
+77557000-77559000 r--s 00013000 08:01 525949     /home/henry/.m2/repository/com/novemberain/monger/1.1.2/monger-1.1.2.jar
+77559000-7755c000 r--s 0000c000 08:01 63646      /home/henry/.m2/repository/commons-fileupload/commons-fileupload/1.2.1/commons-fileupload-1.2.1.jar
+7755c000-7755e000 r--s 0000a000 08:01 63639      /home/henry/.m2/repository/args4j/args4j/2.0.12/args4j-2.0.12.jar
+7755e000-7755f000 r--s 00000000 08:01 79403      /home/henry/.m2/repository/ring/ring-servlet/1.0.2/ring-servlet-1.0.2.jar
+7755f000-7757d000 r--s 00151000 08:01 63617      /home/henry/.m2/repository/com/google/guava/guava/10.0.1/guava-10.0.1.jar
+7757d000-7757f000 r--s 0000a000 08:01 63626      /home/henry/.m2/repository/org/json/json/20090211/json-20090211.jar
+7757f000-77580000 r--s 00002000 08:01 79489      /home/henry/.m2/repository/jayq/jayq/0.1.0-alpha4/jayq-0.1.0-alpha4.jar
+77580000-7759e000 r--s 001bb000 08:01 63661      /home/henry/.m2/repository/org/apache/ant/ant/1.8.2/ant-1.8.2.jar
+7759e000-775a0000 r--s 00005000 08:01 531275     /home/henry/.m2/repository/org/apache/httpcomponents/httpmime/4.2.1/httpmime-4.2.1.jar
+775a0000-775af000 r--s 00074000 08:01 525973     /home/henry/.m2/repository/joda-time/joda-time/1.6/joda-time-1.6.jar
+775af000-775b2000 r--s 00019000 08:01 63625      /home/henry/.m2/repository/com/googlecode/jarjar/jarjar/1.1/jarjar-1.1.jar
+775b2000-775b3000 r--s 00000000 08:01 63693      /home/henry/.m2/repository/org/clojure/tools.namespace/0.1.0/tools.namespace-0.1.0.jar
+775b3000-775b4000 r--s 00000000 08:01 525950     /home/henry/.m2/repository/com/novemberain/validateur/1.1.0/validateur-1.1.0.jar
+775b4000-775ba000 r--s 00033000 08:01 531274     /home/henry/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
+775ba000-775ea000 r--s 002e1000 08:01 63613      /home/henry/.m2/repository/com/google/javascript/closure-compiler/r1592/closure-compiler-r1592.jar
+775ea000-775eb000 r--s 00002000 08:01 79370      /home/henry/.m2/repository/org/thnetos/cd-client/0.3.4/cd-client-0.3.4.jar
+775eb000-775f7000 r--s 00100000 08:01 63614      /home/henry/.m2/repository/org/mozilla/rhino/1.7R3/rhino-1.7R3.jar
+775f7000-775f8000 r--s 00001000 08:01 79369      /home/henry/.m2/repository/clojure-complete/clojure-complete/0.2.1/clojure-complete-0.2.1.jar
+775f8000-775ff000 r--s 0004e000 08:01 525947     /home/henry/.m2/repository/org/mongodb/mongo-java-driver/2.8.0/mongo-java-driver-2.8.0.jar
+775ff000-77600000 r--s 00000000 08:01 79381      /home/henry/.m2/repository/watchtower/watchtower/0.1.1/watchtower-0.1.1.jar
+77600000-776ff000 rw-p 00000000 00:00 0 
+776ff000-77700000 ---p 00000000 00:00 0 
+77700000-777fc000 rw-p 00000000 00:00 0 
+777fc000-77800000 ---p 00000000 00:00 0 
+77800000-778e9000 rw-p 00000000 00:00 0 
+778e9000-77900000 ---p 00000000 00:00 0 
+77900000-779ff000 rw-p 00000000 00:00 0 
+779ff000-77a00000 ---p 00000000 00:00 0 
+77a00000-77af5000 rw-p 00000000 00:00 0 
+77af5000-77b00000 ---p 00000000 00:00 0 
+77b00000-77c00000 rw-p 00000000 00:00 0 
+77c00000-77cfd000 rw-p 00000000 00:00 0 
+77cfd000-77d00000 ---p 00000000 00:00 0 
+77d20000-77d5a000 r--s 00302000 08:01 63640      /home/henry/.m2/repository/org/clojure/clojure/1.3.0/clojure-1.3.0.jar
+77d5a000-77d5b000 ---p 00000000 00:00 0 
+77d5b000-77ddb000 rw-p 00000000 00:00 0 
+77ddb000-77dde000 ---p 00000000 00:00 0 
+77dde000-77e2c000 rw-p 00000000 00:00 0 
+77e2c000-77e2f000 ---p 00000000 00:00 0 
+77e2f000-77ead000 rw-p 00000000 00:00 0 
+77ead000-77eb0000 ---p 00000000 00:00 0 
+77eb0000-77f2e000 rw-p 00000000 00:00 0 
+77f2e000-77f31000 ---p 00000000 00:00 0 
+77f31000-77faf000 rw-p 00000000 00:00 0 
+77faf000-77fb2000 ---p 00000000 00:00 0 
+77fb2000-78000000 rw-p 00000000 00:00 0 
+78000000-78200000 r--p 00000000 08:01 7739       /usr/lib/locale/locale-archive
+78200000-78221000 rw-p 00000000 00:00 0 
+78221000-78300000 ---p 00000000 00:00 0 
+78310000-78325000 r-xp 00000000 08:01 207546     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libnet.so
+78325000-78326000 r--p 00014000 08:01 207546     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libnet.so
+78326000-78327000 rw-p 00015000 08:01 207546     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libnet.so
+7832e000-7834d000 r--s 003bf000 08:01 73222      /home/henry/.m2/repository/org/clojure/google-closure-library/0.0-1376/google-closure-library-0.0-1376.jar
+7834d000-78350000 ---p 00000000 00:00 0 
+78350000-7839e000 rw-p 00000000 00:00 0 
+7839e000-783a1000 ---p 00000000 00:00 0 
+783a1000-783ef000 rw-p 00000000 00:00 0 
+783ef000-783f0000 ---p 00000000 00:00 0 
+783f0000-78470000 rw-p 00000000 00:00 0 
+78470000-78600000 r--s 037ba000 08:01 207513     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/rt.jar
+78600000-786fc000 rw-p 00000000 00:00 0 
+786fc000-78700000 ---p 00000000 00:00 0 
+78700000-787fc000 rw-p 00000000 00:00 0 
+787fc000-78800000 ---p 00000000 00:00 0 
+78806000-7880d000 r--s 000fb000 08:01 206944     /usr/lib/jvm/java-6-openjdk-common/jre/lib/resources.jar
+7880d000-78810000 r--s 0007d000 08:01 206941     /usr/lib/jvm/java-6-openjdk-common/jre/lib/jsse.jar
+78810000-78812000 r--s 0001f000 08:01 63703      /home/henry/.m2/repository/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar
+78812000-78816000 r--s 0002a000 08:01 531276     /home/henry/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar
+78816000-7881a000 r--s 00028000 08:01 63692      /home/henry/.m2/repository/org/mortbay/jetty/jetty-util/6.1.25/jetty-util-6.1.25.jar
+7881a000-7881b000 r--s 00001000 08:01 409506     /home/henry/.m2/repository/org/clojure/tools.logging/0.2.3/tools.logging-0.2.3.jar
+7881b000-7881c000 r--s 00002000 08:01 525986     /home/henry/.m2/repository/clj-time/clj-time/0.4.4/clj-time-0.4.4.jar
+7881c000-7881d000 r--s 00000000 08:01 525953     /home/henry/.m2/repository/ragtime/ragtime.core/0.2.0/ragtime.core-0.2.0.jar
+7881d000-7881e000 r--s 00000000 08:01 79400      /home/henry/.m2/repository/ring/ring-jetty-adapter/1.0.2/ring-jetty-adapter-1.0.2.jar
+7881e000-7881f000 r--s 00001000 08:01 63714      /home/henry/.m2/repository/org/clojure/tools.macro/0.1.0/tools.macro-0.1.0.jar
+7881f000-78820000 r--s 00004000 08:01 409914     /home/henry/.m2/repository/clj-http/clj-http/0.5.5/clj-http-0.5.5.jar
+78820000-78821000 r--s 0001a000 08:01 394324     /home/henry/.m2/repository/org/clojure/clojurescript/0.0-1211/clojurescript-0.0-1211.jar
+78821000-78823000 r--s 00001000 08:01 79373      /home/henry/.m2/repository/cheshire/cheshire/3.1.0/cheshire-3.1.0.jar
+78823000-78829000 r--s 00031000 08:01 531273     /home/henry/.m2/repository/org/apache/httpcomponents/httpcore/4.2.1/httpcore-4.2.1.jar
+78829000-7882b000 r--s 0000d000 08:01 79350      /home/henry/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+7882b000-7882c000 r--s 00004000 08:01 79394      /home/henry/.m2/repository/ring/ring-core/1.0.1/ring-core-1.0.1.jar
+7882c000-78832000 r--s 00068000 08:01 63636      /home/henry/.m2/repository/com/google/protobuf/protobuf-java/2.4.1/protobuf-java-2.4.1.jar
+78832000-78833000 r--s 00000000 08:01 79380      /home/henry/.m2/repository/colorize/colorize/0.1.1/colorize-0.1.1.jar
+78833000-7883d000 r--s 0005f000 08:01 409912     /home/henry/.m2/repository/org/apache/httpcomponents/httpclient/4.2.1/httpclient-4.2.1.jar
+7883d000-78843000 r--s 00034000 08:01 63635      /home/henry/.m2/repository/junit/junit/4.8.2/junit-4.8.2.jar
+78843000-78844000 r--s 00002000 08:01 393992     /home/henry/.m2/repository/com/taoensso/timbre/0.8.0/timbre-0.8.0.jar
+78844000-78845000 r--s 00000000 08:01 63709      /home/henry/.m2/repository/org/clojure/core.incubator/0.1.0/core.incubator-0.1.0.jar
+78845000-78846000 r--s 00001000 08:01 79401      /home/henry/.m2/repository/ring/ring-devel/1.0.2/ring-devel-1.0.2.jar
+78846000-78847000 r--s 00000000 08:01 79391      /home/henry/.m2/repository/clout/clout/1.0.1/clout-1.0.1.jar
+78847000-78848000 r--s 00007000 08:01 79349      /home/henry/.m2/repository/org/clojure/tools.nrepl/0.2.0-beta7/tools.nrepl-0.2.0-beta7.jar
+78848000-7884c000 r--s 0002e000 08:01 79359      /home/henry/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.0.0/jackson-core-2.0.0.jar
+7884c000-7887f000 rw-p 00000000 00:00 0 
+7887f000-78880000 ---p 00000000 00:00 0 
+78880000-78900000 rw-p 00000000 00:00 0 
+78900000-78a00000 rw-p 00000000 00:00 0 
+78a01000-78a03000 r--s 00001000 08:01 531281     /home/henry/.m2/repository/slingshot/slingshot/0.10.3/slingshot-0.10.3.jar
+78a03000-78a0a000 r--s 0007d000 08:01 63616      /home/henry/.m2/repository/org/mortbay/jetty/jetty/6.1.25/jetty-6.1.25.jar
+78a0a000-78a0b000 r--s 00001000 08:01 525971     /home/henry/.m2/repository/org/clojure/data.json/0.1.2/data.json-0.1.2.jar
+78a0b000-78a0c000 r--s 00002000 08:01 79404      /home/henry/.m2/repository/hiccup/hiccup/1.0.0-beta1/hiccup-1.0.0-beta1.jar
+78a0c000-78a0d000 r--s 00001000 08:01 525951     /home/henry/.m2/repository/clojurewerkz/support/0.5.0/support-0.5.0.jar
+78a0d000-78a0f000 r--s 0000b000 08:01 79360      /home/henry/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.0.0/jackson-dataformat-smile-2.0.0.jar
+78a0f000-78a11000 r--s 00006000 08:01 79393      /home/henry/.m2/repository/noir/noir/1.3.0-beta2/noir-1.3.0-beta2.jar
+78a11000-78a13000 r--s 00002000 08:01 63694      /home/henry/.m2/repository/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.jar
+78a13000-78a14000 r--s 00000000 08:01 79397      /home/henry/.m2/repository/ring/ring/1.0.2/ring-1.0.2.jar
+78a14000-78a16000 r--s 00018000 08:01 63660      /home/henry/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar
+78a16000-78a17000 r--s 00000000 08:01 63669      /home/henry/.m2/repository/ns-tracker/ns-tracker/0.1.1/ns-tracker-0.1.1.jar
+78a17000-78a18000 r--s 00004000 08:01 79367      /home/henry/.m2/repository/org/mindrot/jbcrypt/0.3m/jbcrypt-0.3m.jar
+78a18000-78a1a000 r--s 00001000 08:01 66467      /home/henry/.m2/repository/crate/crate/0.2.0-alpha2/crate-0.2.0-alpha2.jar
+78a1a000-78a1b000 r--s 00001000 08:01 63163      /home/henry/.m2/repository/clj-stacktrace/clj-stacktrace/0.2.4/clj-stacktrace-0.2.4.jar
+78a1b000-78a1e000 r--s 00006000 08:01 63691      /home/henry/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar
+78a1e000-78a22000 r--s 00038000 08:01 206923     /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/sunpkcs11.jar
+78a22000-78a25000 r--s 00031000 08:01 206926     /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/sunjce_provider.jar
+78a25000-78a26000 ---p 00000000 00:00 0 
+78a26000-78aa6000 rw-p 00000000 00:00 0 
+78aa6000-78aa7000 ---p 00000000 00:00 0 
+78aa7000-78b2f000 rw-p 00000000 00:00 0 
+78b2f000-78b67000 rw-p 00000000 00:00 0 
+78b67000-78b77000 rw-p 00000000 00:00 0 
+78b77000-78c64000 rw-p 00000000 00:00 0 
+78c64000-78c6c000 rw-p 00000000 00:00 0 
+78c6c000-78ca4000 rw-p 00000000 00:00 0 
+78ca4000-78cb4000 rw-p 00000000 00:00 0 
+78cb4000-78da0000 rw-p 00000000 00:00 0 
+78da0000-78e04000 rw-p 00000000 00:00 0 
+78e04000-78e1f000 rw-p 00000000 00:00 0 
+78e1f000-79e20000 rw-p 00000000 00:00 0 
+79e20000-80e20000 rw-p 00000000 00:00 0 
+80e20000-82db0000 rw-p 00000000 00:00 0 
+82db0000-a0780000 rw-p 00000000 00:00 0 
+a0780000-acd60000 rw-p 00000000 00:00 0 
+aea00000-aeae6000 rw-p 00000000 00:00 0 
+aeae6000-aeb00000 ---p 00000000 00:00 0 
+aec00000-aeced000 rw-p 00000000 00:00 0 
+aeced000-aed00000 ---p 00000000 00:00 0 
+aee00000-aeed8000 rw-p 00000000 00:00 0 
+aeed8000-aef00000 ---p 00000000 00:00 0 
+aef00000-af0f3000 rw-p 00000000 00:00 0 
+af0f3000-af100000 ---p 00000000 00:00 0 
+af100000-af1f3000 rw-p 00000000 00:00 0 
+af1f3000-af200000 ---p 00000000 00:00 0 
+af200000-af23c000 rw-p 00000000 00:00 0 
+af23c000-af300000 ---p 00000000 00:00 0 
+af300000-af5fd000 rw-p 00000000 00:00 0 
+af5fd000-af600000 ---p 00000000 00:00 0 
+af600000-af758000 rw-p 00000000 00:00 0 
+af758000-af800000 ---p 00000000 00:00 0 
+af800000-af9fe000 rw-p 00000000 00:00 0 
+af9fe000-afa00000 ---p 00000000 00:00 0 
+afa00000-afb00000 rw-p 00000000 00:00 0 
+afb00000-afc00000 rw-p 00000000 00:00 0 
+afcfe000-afd00000 r--s 00013000 08:01 206940     /usr/lib/jvm/java-6-openjdk-common/jre/lib/jce.jar
+afd00000-aff00000 rw-p 00000000 00:00 0 
+aff00000-b0100000 rw-p 00000000 00:00 0 
+b0100000-b01d3000 rw-p 00000000 00:00 0 
+b01d3000-b0200000 ---p 00000000 00:00 0 
+b0200000-b0300000 rw-p 00000000 00:00 0 
+b0300000-b0400000 rw-p 00000000 00:00 0 
+b0402000-b040f000 r--s 00107000 08:01 206945     /usr/lib/jvm/java-6-openjdk-common/jre/lib/rhino.jar
+b040f000-b041d000 r--s 00351000 08:01 206913     /usr/lib/jvm/java-6-openjdk-common/jre/lib/charsets.jar
+b041d000-b0420000 r--s 0007d000 08:01 206941     /usr/lib/jvm/java-6-openjdk-common/jre/lib/jsse.jar
+b0420000-b0422000 r--s 0000f000 08:01 206927     /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/pulse-java.jar
+b0422000-b0424000 r--s 00001000 08:01 206924     /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/dnsns.jar
+b0424000-b0439000 rw-p 00000000 00:00 0 
+b0439000-b05a4000 rw-p 00000000 00:00 0 
+b05a4000-b0adc000 rwxp 00000000 00:00 0 
+b0adc000-b65a4000 rw-p 00000000 00:00 0 
+b65a4000-b65af000 r-xp 00000000 08:01 134913     /lib/i386-linux-gnu/libnss_files-2.15.so
+b65af000-b65b0000 r--p 0000a000 08:01 134913     /lib/i386-linux-gnu/libnss_files-2.15.so
+b65b0000-b65b1000 rw-p 0000b000 08:01 134913     /lib/i386-linux-gnu/libnss_files-2.15.so
+b65b1000-b65bb000 r-xp 00000000 08:01 134917     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b65bb000-b65bc000 r--p 00009000 08:01 134917     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b65bc000-b65bd000 rw-p 0000a000 08:01 134917     /lib/i386-linux-gnu/libnss_nis-2.15.so
+b65bd000-b65d3000 r-xp 00000000 08:01 134907     /lib/i386-linux-gnu/libnsl-2.15.so
+b65d3000-b65d4000 r--p 00015000 08:01 134907     /lib/i386-linux-gnu/libnsl-2.15.so
+b65d4000-b65d5000 rw-p 00016000 08:01 134907     /lib/i386-linux-gnu/libnsl-2.15.so
+b65d5000-b65d7000 rw-p 00000000 00:00 0 
+b65d7000-b65fd000 r-xp 00000000 08:01 207536     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b65fd000-b65fe000 r--p 00025000 08:01 207536     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b65fe000-b6600000 rw-p 00026000 08:01 207536     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b6600000-b66ff000 rw-p 00000000 00:00 0 
+b66ff000-b6700000 ---p 00000000 00:00 0 
+b6700000-b6701000 r--s 00007000 08:01 207629     /usr/share/java/java-atk-wrapper.jar
+b6701000-b6704000 r--s 00077000 08:01 206925     /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/localedata.jar
+b6704000-b670b000 r-xp 00000000 08:01 134909     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b670b000-b670c000 r--p 00006000 08:01 134909     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b670c000-b670d000 rw-p 00007000 08:01 134909     /lib/i386-linux-gnu/libnss_compat-2.15.so
+b670d000-b670e000 r--s 00001000 08:01 79390      /home/henry/.m2/repository/compojure/compojure/1.0.1/compojure-1.0.1.jar
+b670e000-b6715000 r-xp 00000000 08:01 207553     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b6715000-b6716000 r--p 00006000 08:01 207553     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b6716000-b6717000 rw-p 00007000 08:01 207553     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b6717000-b671f000 rw-s 00000000 08:01 409923     /tmp/hsperfdata_henry/12543
+b671f000-b6726000 r-xp 00000000 08:01 134948     /lib/i386-linux-gnu/librt-2.15.so
+b6726000-b6727000 r--p 00006000 08:01 134948     /lib/i386-linux-gnu/librt-2.15.so
+b6727000-b6728000 rw-p 00007000 08:01 134948     /lib/i386-linux-gnu/librt-2.15.so
+b6728000-b672b000 ---p 00000000 00:00 0 
+b672b000-b6779000 rw-p 00000000 00:00 0 
+b6779000-b6795000 r-xp 00000000 08:01 134883     /lib/i386-linux-gnu/libgcc_s.so.1
+b6795000-b6796000 r--p 0001b000 08:01 134883     /lib/i386-linux-gnu/libgcc_s.so.1
+b6796000-b6797000 rw-p 0001c000 08:01 134883     /lib/i386-linux-gnu/libgcc_s.so.1
+b6797000-b67c1000 r-xp 00000000 08:01 134894     /lib/i386-linux-gnu/libm-2.15.so
+b67c1000-b67c2000 r--p 00029000 08:01 134894     /lib/i386-linux-gnu/libm-2.15.so
+b67c2000-b67c3000 rw-p 0002a000 08:01 134894     /lib/i386-linux-gnu/libm-2.15.so
+b67c3000-b689b000 r-xp 00000000 08:01 4067       /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b689b000-b689c000 ---p 000d8000 08:01 4067       /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b689c000-b68a0000 r--p 000d8000 08:01 4067       /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b68a0000-b68a1000 rw-p 000dc000 08:01 4067       /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b68a1000-b68a8000 rw-p 00000000 00:00 0 
+b68a8000-b70c6000 r-xp 00000000 08:01 207557     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b70c6000-b710b000 r--p 0081e000 08:01 207557     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b710b000-b711a000 rw-p 00863000 08:01 207557     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b711a000-b7536000 rw-p 00000000 00:00 0 
+b7536000-b754a000 r-xp 00000000 08:01 134973     /lib/i386-linux-gnu/libz.so.1.2.3.4
+b754a000-b754b000 r--p 00013000 08:01 134973     /lib/i386-linux-gnu/libz.so.1.2.3.4
+b754b000-b754c000 rw-p 00014000 08:01 134973     /lib/i386-linux-gnu/libz.so.1.2.3.4
+b754c000-b76eb000 r-xp 00000000 08:01 134862     /lib/i386-linux-gnu/libc-2.15.so
+b76eb000-b76ed000 r--p 0019f000 08:01 134862     /lib/i386-linux-gnu/libc-2.15.so
+b76ed000-b76ee000 rw-p 001a1000 08:01 134862     /lib/i386-linux-gnu/libc-2.15.so
+b76ee000-b76f1000 rw-p 00000000 00:00 0 
+b76f1000-b76f4000 r-xp 00000000 08:01 134875     /lib/i386-linux-gnu/libdl-2.15.so
+b76f4000-b76f5000 r--p 00002000 08:01 134875     /lib/i386-linux-gnu/libdl-2.15.so
+b76f5000-b76f6000 rw-p 00003000 08:01 134875     /lib/i386-linux-gnu/libdl-2.15.so
+b76f6000-b76fa000 r-xp 00000000 08:01 207524     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/jli/libjli.so
+b76fa000-b76fb000 r--p 00003000 08:01 207524     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/jli/libjli.so
+b76fb000-b76fc000 rw-p 00004000 08:01 207524     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/jli/libjli.so
+b76fc000-b76fd000 rw-p 00000000 00:00 0 
+b76fd000-b7714000 r-xp 00000000 08:01 134942     /lib/i386-linux-gnu/libpthread-2.15.so
+b7714000-b7715000 r--p 00016000 08:01 134942     /lib/i386-linux-gnu/libpthread-2.15.so
+b7715000-b7716000 rw-p 00017000 08:01 134942     /lib/i386-linux-gnu/libpthread-2.15.so
+b7716000-b7718000 rw-p 00000000 00:00 0 
+b7718000-b7719000 r--s 00000000 08:01 63704      /home/henry/.m2/repository/org/clojure/java.classpath/0.1.0/java.classpath-0.1.0.jar
+b7719000-b771a000 r--p 005e0000 08:01 7739       /usr/lib/locale/locale-archive
+b771a000-b771b000 rw-p 00000000 00:00 0 
+b771b000-b771c000 ---p 00000000 00:00 0 
+b771c000-b7727000 r-xp 00000000 08:01 207552     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b7727000-b7728000 ---p 0000b000 08:01 207552     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b7728000-b7729000 r--p 0000b000 08:01 207552     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b7729000-b772a000 rw-p 0000c000 08:01 207552     /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b772a000-b772c000 rw-p 00000000 00:00 0 
+b772c000-b772d000 r-xp 00000000 00:00 0          [vdso]
+b772d000-b774d000 r-xp 00000000 08:01 134842     /lib/i386-linux-gnu/ld-2.15.so
+b774d000-b774e000 r--p 0001f000 08:01 134842     /lib/i386-linux-gnu/ld-2.15.so
+b774e000-b774f000 rw-p 00020000 08:01 134842     /lib/i386-linux-gnu/ld-2.15.so
+bfb22000-bfb45000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -XX:+TieredCompilation -Dclojure.compile.path=/home/henry/Devel/hackny/target/classes -Dhackny.version=0.1.0-SNAPSHOT -Dclojure.debug=false 
+java_command: clojure.main -e (do (do (require (quote clojure.tools.nrepl.server)) (require (quote complete.core))) (set! *warn-on-reflection* nil) (clojure.core/let [server__1805__auto__ (clojure.tools.nrepl.server/start-server :port 0 :ack-port 44380)] (clojure.core/println "nREPL server started on port" (clojure.core/-> server__1805__auto__ clojure.core/deref :ss .getLocalPort)) (clojure.core/while true (java.lang.Thread/sleep java.lang.Long/MAX_VALUE))))
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/home/henry/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/henry/bin:/home/henry/.rvm/bin
+LD_LIBRARY_PATH=/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386:/usr/lib/jvm/java-6-openjdk-i386/jre/../lib/i386:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/client:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386:/usr/lib/jvm/java-6-openjdk-i386/jre/../lib/i386
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x66a190], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x66a190], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x52e0f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x52e0f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x52e0f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x52e0f0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x52df80], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x531020], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x531020], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x531020], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x531020], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Ubuntu 12.04 (precise)
+uname:Linux 3.2.0-24-generic-pae #37-Ubuntu SMP Wed Apr 25 10:47:59 UTC 2012 i686
+libc:glibc 2.15 NPTL 2.15 
+rlimit: STACK 8192k, CORE 0k, NPROC 24082, NOFILE 4096, AS infinity
+load average:1.63 1.28 1.17
+
+/proc/meminfo:
+MemTotal:        3097668 kB
+MemFree:          127144 kB
+Buffers:             656 kB
+Cached:           100476 kB
+SwapCached:            0 kB
+Active:          2830168 kB
+Inactive:          73840 kB
+Active(anon):    2804420 kB
+Inactive(anon):    47448 kB
+Active(file):      25748 kB
+Inactive(file):    26392 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+HighTotal:       2232264 kB
+HighFree:           1240 kB
+LowTotal:         865404 kB
+LowFree:          125904 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                96 kB
+Writeback:             0 kB
+AnonPages:       2803028 kB
+Mapped:            95100 kB
+Shmem:             48836 kB
+Slab:              30184 kB
+SReclaimable:      13492 kB
+SUnreclaim:        16692 kB
+KernelStack:        4840 kB
+PageTables:        18100 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1548832 kB
+Committed_AS:    5763236 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       34576 kB
+VmallocChunk:      86016 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       12280 kB
+DirectMap2M:      901120 kB
+
+
+CPU:total 3 (3 cores per cpu, 1 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 3097668k(127144k free), swap 0k(0k free)
+
+vm_info: OpenJDK Server VM (20.0-b12) for linux-x86 JRE (1.6.0_24-b24), built on Apr 13 2012 01:06:51 by "buildd" with gcc 4.6.3
+
+time: Sat Sep 29 23:43:09 2012
+elapsed time: 7 seconds
+

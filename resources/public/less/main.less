@@ -1,0 +1,32 @@
+#content{
+  margin-top: 40px;
+  overflow-y:scroll;
+  position: absolute;
+  height: ~"-webkit-calc(100% - 40px)";
+  margin-right:2px;
+}
+#content div{
+  height:180px;
+  float:left;
+  border: 1px solid white;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+html{
+	overflow:hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #999;
+}
